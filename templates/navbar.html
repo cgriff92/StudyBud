@@ -3,9 +3,14 @@
 </a>
 
 
+
+
 <form method = "GET" action = "{%url 'home' %}"></form>
     <input type = "text" name = "q" placeholder = "Search..." value = "{{request.GET.q}}"/>
 
 </form>
+
+<a href="{% url 'login' %}">Login</a>
+
 
 <hr>

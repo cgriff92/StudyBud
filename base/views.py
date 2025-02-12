@@ -5,6 +5,20 @@ from .forms import RoomForm
 # Create your views here.
 
 
+def loginPage(request):
+    if request.method == 'POST':
+        username = request.POST.get('username')
+        password = request.POST.get('password')
+        
+        try:
+            user = User.objects.get(username=username)
+        except: 
+            user = None
+
+    context = {}
+    return render(request, 'base/login_register.html', context)
+
+
 
 def home(request):
     q = request.GET.get('q') if request.GET.get('q') != None else ''
